@@ -1,0 +1,23 @@
+{
+  "name": "rpi-v1",
+  "version": "1.0.0",
+  "description": "project v1 for raspberry-pi",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sudo nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanilChugaev/rpi-v1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanilChugaev/rpi-v1/issues"
+  },
+  "homepage": "https://github.com/DanilChugaev/rpi-v1#readme",
+  "dependencies": {
+    "color": "^3.1.3",
+    "rpi-ws281x": "^1.0.35"
+  }
+}
