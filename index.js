@@ -1,4 +1,5 @@
 const neopixel = require('rpi-ws281x');
+const Digit = require('./Digit');
 
 class Panel {
     constructor() {
@@ -12,9 +13,11 @@ class Panel {
     }
 
     run() {
-        for (let i = 0; i < this.config.leds; i++) {
-            this.pixels[i] = this.getColor({ blue: 255 });
-        }
+        const digit = new Digit({
+            pixels: this.pixels,
+        });
+        
+        digit.zero({ x: 15, y: 0});
 
         neopixel.render(this.pixels);
     }
@@ -24,5 +27,5 @@ class Panel {
     }
 };
 
-const example = new Panel();
-example.run();
+const panel = new Panel();
+panel.run();
