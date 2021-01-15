@@ -25,7 +25,7 @@ class Panel {
     getColor({ red = 0, green = 0, blue = 0}) {
         return (green << 16) | (red << 8) | blue;
     }
-};
+}
 
 const panel = new Panel();
 panel.run();

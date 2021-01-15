@@ -1,3 +1,4 @@
+/* global describe test expect */
 const helpers = require('./helpers');
 
 describe('getColor', () => {

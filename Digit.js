@@ -58,5 +58,5 @@ module.exports = class Digit {
         const yPos = !(x % 2) ? y : 0 - y;
         return xPos + yPos;
     }
-}
+};
 

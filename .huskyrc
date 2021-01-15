@@ -1,5 +1,6 @@
 {
     "hooks": {
-        "pre-push": "yarn jest"
+        "pre-commit": "npm run lint --fix && git add .",
+        "pre-push": "npm run test"
     }
 }
