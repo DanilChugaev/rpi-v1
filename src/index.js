@@ -18,7 +18,7 @@ class Panel {
             pixels: this.pixels,
         });
 
-        digit.zero({ x: 15, y: 0});
+        digit.nine({ x: 0, y: 0});
 
         neopixel.render(this.pixels);
     }

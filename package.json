@@ -19,10 +19,10 @@
     "url": "https://github.com/DanilChugaev/rpi-v1/issues"
   },
   "homepage": "https://github.com/DanilChugaev/rpi-v1#readme",
-  "dependencies": {},
-  "onMac": {
+  "dependencies": {
     "rpi-ws281x": "^1.0.35"
   },
+  "onMac": {},
   "devDependencies": {
     "eslint": "^7.17.0",
     "husky": "^4.3.7",
