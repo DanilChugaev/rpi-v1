@@ -1,6 +1,7 @@
 const neopixel = require('rpi-ws281x');
 const Digit = require('./Digit');
 
+/** Класс, отвечающий за инициализацию панели светодиодов */
 class Panel {
     constructor() {
         this.config = {
@@ -16,14 +17,14 @@ class Panel {
         const digit = new Digit({
             pixels: this.pixels,
         });
-        
+
         digit.zero({ x: 15, y: 0});
 
         neopixel.render(this.pixels);
     }
-    
-    getColor({ red = 0, green = 0, blue = 0}) {
-        return (green << 16) | (red << 8) | blue;
+
+    reset() {
+        neopixel.reset();
     }
 }
 
