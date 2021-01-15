@@ -5,24 +5,22 @@
  *
  * @return {number} итоговый цвет
  */
-const getColor = function({ red = 0, green = 0, blue = 0}) {
+const color = function({ red = 0, green = 0, blue = 0}) {
     return (green << 16) | (red << 8) | blue;
 };
 
 /**
  * Определяет местоположение светодиода по указанным координатам
+ * Нечетные полосы (начиная от 0 светодиода) идут вниз
+ * Четные идут вверх
  *
  * @param {{ x: number, y: number }} - позиция по оси `x` и оси `y`
- * max x = 15
- * max y = 9
  *
  * @return {number} итоговая позиция светодиода
  */
-const index = function({ x = 0, y = 0 } = {}) {
-    const xPos = !(x % 2) ? x * 14: (x - ((x-1)/2)) * 14 * 2 - 1;
-    const yPos = !(x % 2) ? y : 0 - y;
-    return xPos + yPos;
+const position = function({ x = 0, y = 0 } = {}) {
+    return !(x % 2) ? x * 14 + y : (x - ((x-1)/2)) * 14 * 2 - 1 - y;
 };
 
-module.exports.getColor = getColor;
-module.exports.index = index;
+module.exports.color = color;
+module.exports.position = position;
