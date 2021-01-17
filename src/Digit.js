@@ -29,6 +29,49 @@ module.exports = class Digit {
     }
 
     /**
+     * Create digit from number
+     *
+     * @return {void}
+     */
+    create({ n, x, y }) {
+        switch(n) { 
+        case 0:
+            this.zero({ x, y });
+            break;
+        case 1:
+            this.one({ x, y });
+            break;
+        case 2:
+            this.two({ x, y });
+            break;
+        case 3:
+            this.three({ x, y });
+            break;
+        case 4:
+            this.four({ x, y });
+            break;
+        case 5:
+            this.five({ x, y });
+            break;
+        case 6:
+            this.six({ x, y });
+            break;
+        case 7:
+            this.seven({ x, y });
+            break;
+        case 8:
+            this.eight({ x, y });
+            break;
+        case 9:
+            this.nine({ x, y });
+            break;
+        default:
+            this.zero({ x, y });
+            break;
+        }
+    }
+
+    /**
      * Create horizontal top line
      *
      * @example

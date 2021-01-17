@@ -1,5 +1,5 @@
 const neopixel = require('rpi-ws281x');
-const Digit = require('./Digit');
+const Clock = require('./Clock');
 
 /** Класс, отвечающий за инициализацию панели светодиодов */
 class Panel {
@@ -14,11 +14,17 @@ class Panel {
     }
 
     run() {
-        const digit = new Digit({
+        const nskClock = new Clock({
+            x: 1, y: 1,
+            pixels: this.pixels,
+        });
+        const mskClock = new Clock({
+            x: 1, y: 8,
             pixels: this.pixels,
         });
 
-        digit.nine({ x: 0, y: 0});
+        nskClock.run();
+        mskClock.run();
 
         neopixel.render(this.pixels);
     }
