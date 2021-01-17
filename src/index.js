@@ -1,5 +1,6 @@
 const neopixel = require('rpi-ws281x');
 const Clock = require('./Clock');
+const helpers = require('./helpers');
 
 /** Класс, отвечающий за инициализацию панели светодиодов */
 class Panel {
@@ -21,6 +22,7 @@ class Panel {
         const mskClock = new Clock({
             x: 1, y: 8,
             pixels: this.pixels,
+            color: helpers.color({ green: 255 }),
         });
 
         nskClock.run();

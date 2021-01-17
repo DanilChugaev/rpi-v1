@@ -11,7 +11,7 @@ module.exports = class Digit {
      */
     constructor({
         pixels,
-        color = helpers.color({ blue: 255 }),
+        color = helpers.color({ green: 255 }),
     }) {
         this.width = 3;
         this.height = 5;
