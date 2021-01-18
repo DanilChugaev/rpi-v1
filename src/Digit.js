@@ -11,7 +11,7 @@ module.exports = class Digit {
      */
     constructor({
         pixels,
-        color = helpers.color({ green: 255 }),
+        color = helpers.color({ blue: 255 }),
     }) {
         this.width = 3;
         this.height = 5;
@@ -34,7 +34,7 @@ module.exports = class Digit {
      * @return {void}
      */
     create({ n, x, y }) {
-        switch(n) { 
+        switch(n) {
         case 0:
             this.zero({ x, y });
             break;
@@ -124,7 +124,7 @@ module.exports = class Digit {
         this.pixels[position({ x: x + 1, y: y + 4 })] = this.color;
         this.pixels[position({ x: x + 2, y: y + 4 })] = this.color;
     }
-     
+
     /**
      * Create number `0`
      *
