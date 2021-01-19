@@ -1,4 +1,5 @@
 const neopixel = require('rpi-ws281x');
+
 const Clock = require('./Clock');
 const helpers = require('./helpers');
 
@@ -9,26 +10,28 @@ class Panel {
             leds: 252,
             brightness: 24,
         };
-        this.pixels = new Uint32Array(this.config.leds);
+        this.nskClock = new Clock({
+            x: 1, y: 1,
+            color: helpers.color({ green: 255 }),
+        });
+        this.mskClock = new Clock({
+            x: 1, y: 8,
+        });
 
         neopixel.configure(this.config);
     }
 
+    loop() {
+        const pixels = new Uint32Array(this.config.leds);
+
+        this.nskClock.run({ pixels });
+        this.mskClock.run({ pixels });
+
+        neopixel.render(pixels);
+    }
+
     run() {
-        const nskClock = new Clock({
-            x: 1, y: 1,
-            pixels: this.pixels,
-        });
-        const mskClock = new Clock({
-            x: 1, y: 8,
-            pixels: this.pixels,
-            color: helpers.color({ green: 255 }),
-        });
-
-        nskClock.run();
-        mskClock.run();
-
-        neopixel.render(this.pixels);
+        setInterval(this.loop.bind(this), 1000);
     }
 
     reset() {

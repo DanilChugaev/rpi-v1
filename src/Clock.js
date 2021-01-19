@@ -6,30 +6,25 @@ module.exports = class Clock {
     /**
      * Конструктор clock
      *
-     * @param {Uint32Array<number>} pixels - массив пикселей
      * @param {number} color - цвет пикселя
      */
     constructor({
-        pixels,
         color = helpers.color({ blue: 255 }),
         x = 0, y = 0,
     }) {
         this.x = x;
         this.y = y;
-        this.pixels = pixels;
         this.color = color;
         this.digit = null;
     }
 
-    run() {
+    run({ pixels }) {
         this.digit = new Digit({
-            pixels: this.pixels,
+            pixels,
             color: this.color,
         });
-            
-        // for(;;) {
+
         this.update();
-        // }
     }
 
     update() {
