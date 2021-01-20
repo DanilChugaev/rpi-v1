@@ -16,6 +16,7 @@ class Panel {
         });
         this.mskClock = new Clock({
             x: 1, y: 8,
+            timezone: -4,
         });
 
         neopixel.configure(this.config);
