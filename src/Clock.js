@@ -33,6 +33,11 @@ module.exports = class Clock {
         this.timezone = timezone;
     }
 
+    /**
+     * Запуск часов
+     *
+     * @param {Uint32Array<number>} pixels - массив пикселей
+     */
     run({ pixels }) {
         this.digit = new Digit({
             pixels,
@@ -42,6 +47,7 @@ module.exports = class Clock {
         this.update();
     }
 
+    /** Обновляет состояние часов */
     update() {
         const { h1, h2, m1, m2 } = this.getTime(this.timezone);
 
@@ -81,8 +87,8 @@ module.exports = class Clock {
     /**
      * Считает время относительно локального в зависимости от таймзоны
      *
-     * @param {number} hours -
-     * @param {number} timezone -
+     * @param {number} hours - локальный час
+     * @param {number} timezone - смещение времени, относительно локального
      *
      * @return {number}
      */

@@ -31,6 +31,10 @@ module.exports = class Digit {
     /**
      * Create digit from number
      *
+     * @param {number} n - цифра
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
+     *
      * @return {void}
      */
     create({ n, x, y }) {
@@ -74,6 +78,8 @@ module.exports = class Digit {
     /**
      * Create horizontal top line
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * # # #
      * * * *
@@ -92,6 +98,8 @@ module.exports = class Digit {
     /**
      * Create horizontal middle line
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * * * *
      * * * *
@@ -110,6 +118,8 @@ module.exports = class Digit {
     /**
      * Create horizontal bottom line
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * * * *
      * * * *
@@ -128,6 +138,8 @@ module.exports = class Digit {
     /**
      * Create number `0`
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * # # #
      * # * #
@@ -155,6 +167,8 @@ module.exports = class Digit {
     /**
      * Create number `1`
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * * * #
      * * * #
@@ -173,6 +187,8 @@ module.exports = class Digit {
     /**
      * Create number `2`
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * # # #
      * * * #
@@ -197,6 +213,8 @@ module.exports = class Digit {
     /**
      * Create number `3`
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * # # #
      * * * #
@@ -221,6 +239,8 @@ module.exports = class Digit {
     /**
      * Create number `4`
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * # * #
      * # * #
@@ -246,6 +266,8 @@ module.exports = class Digit {
     /**
      * Create number `5`
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * # # #
      * # * *
@@ -270,6 +292,8 @@ module.exports = class Digit {
     /**
      * Create number `6`
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * # # #
      * # * *
@@ -296,6 +320,8 @@ module.exports = class Digit {
     /**
      * Create number `7`
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * # # #
      * * * #
@@ -317,6 +343,8 @@ module.exports = class Digit {
     /**
      * Create number `8`
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * # # #
      * # * #
@@ -343,6 +371,8 @@ module.exports = class Digit {
     /**
      * Create number `9`
      *
+     * @param {number} x - положение пикселя по оси x
+     * @param {number} y - положение пикселя по оси y
      * @example
      * # # #
      * # * #
@@ -352,7 +382,6 @@ module.exports = class Digit {
      *
      * @return {void}
      */
-
     nine({ x = 0, y = 0 } = {}) {
         this.createHorizontalTopLine({ x, y });
 
