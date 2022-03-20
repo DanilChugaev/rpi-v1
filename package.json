@@ -14,7 +14,7 @@
     "url": "git+https://github.com/DanilChugaev/rpi-v1.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/DanilChugaev/rpi-v1/issues"
   },
